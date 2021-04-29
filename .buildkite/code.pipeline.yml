@@ -182,7 +182,7 @@ steps:
     branches: master
     command:
       # TODO: Consider making this a part of the development Docker image.
-      - go get -u github.com/dvyukov/go-fuzz/go-fuzz github.com/dvyukov/go-fuzz/go-fuzz-build
+      - go get -u github.com/dvyukov/go-fuzz/go-fuzz@latest github.com/dvyukov/go-fuzz/go-fuzz-build@latest
       - make -C go build-fuzz
     retry:
       <<: *retry_agent_failure
