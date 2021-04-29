@@ -58,11 +58,7 @@ check_docker_ci_image_tag_exists() {
 }
 
 # Determine the oasis-core-ci Docker image tag to use for tests.
-if [[ -n $BUILDKITE_PULL_REQUEST_BASE_BRANCH ]]; then
-  docker_tag=${BUILDKITE_PULL_REQUEST_BASE_BRANCH//\//-}
-else
-  docker_tag=${BUILDKITE_BRANCH//\//-}
-fi
+docker_tag=master
 
 # If anything under docker/ has been modified, assume a per-branch tag. Note that this will fail until
 # the corresponding GitHub Action that rebuilds the Docker images runs.
